@@ -12,9 +12,6 @@ class RandomChar extends Component {
         char: {}
     }
 
-
-
-
     marvelService = new MarvelService()
 
     onChatLoaded = (char) => {
@@ -31,10 +28,6 @@ class RandomChar extends Component {
     render() {
         const { char: { name, description, thumbnail, homepage, wiki } } = this.state
 
-        // if (!description) {
-        //     description = 'Описание герия не нашлось'
-        // }
-        // console.log(description)
         return (
             <div className="randomchar">
                 <div className="randomchar__block">
