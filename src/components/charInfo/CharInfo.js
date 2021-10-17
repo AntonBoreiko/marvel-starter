@@ -61,6 +61,7 @@ class CharInfo extends Component {
 
     render() {
 
+
         const { char, loading, error } = this.state
 
         const skeleton = char || loading || error ? null : <Skeleton />
