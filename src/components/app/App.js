@@ -5,7 +5,6 @@ import CharList from "../charList/CharList";
 import CharInfo from "../charInfo/CharInfo";
 import ErrorBoundary from "../errorBoundary/ErrorBoundary";
 
-
 import decoration from '../../resources/img/vision.png';
 
 class App extends Component {
