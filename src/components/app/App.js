@@ -17,6 +17,7 @@ class App extends Component {
         this.setState({
             selectedChar: id
         })
+        
     }
     render() {
         return (
