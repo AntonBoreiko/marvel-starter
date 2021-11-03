@@ -1,4 +1,4 @@
-import './appHeader.scss';
+import './appHeader.scss'
 
 const AppHeader = () => {
     return (
@@ -19,4 +19,4 @@ const AppHeader = () => {
     )
 }
 
-export default AppHeader;
+export default AppHeader
