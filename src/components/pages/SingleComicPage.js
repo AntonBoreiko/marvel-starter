@@ -5,7 +5,9 @@ import useMarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import AppBanner from "../appBanner/AppBanner";
+
 import './singleComicPage.scss';
+import { isDOMComponentElement } from 'react-dom/test-utils';
 
 const SingleComicPage = () => {
    const { comicId } = useParams();
@@ -41,7 +43,7 @@ const SingleComicPage = () => {
 }
 
 const View = ({ comic }) => {
-   const { title, description, pageCount, thumbnail, language, price } = comic;
+   const { title, description, pageCount, thumbnail, language, price, id } = comic;
 
    return (
       <div className="single-comic">

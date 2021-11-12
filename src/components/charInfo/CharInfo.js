@@ -6,6 +6,7 @@ import ErrorMessage from '../errorMessage/ErrorMessage'
 import Skeleton from '../skeleton/Skeleton'
 
 
+
 import './charInfo.scss'
 
 const CharInfo = (props) => {
@@ -43,6 +44,8 @@ const CharInfo = (props) => {
             {errorMessage}
             {spinner}
             {content}
+
+
         </div>
     )
 }
