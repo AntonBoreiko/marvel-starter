@@ -1,37 +1,43 @@
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import setContent from '../../utils/setContent'
-import useMarvelService from '../../services/MarvelService';
-import AppBanner from "../appBanner/AppBanner";
+import useMarvelService from '../../services/MarvelService'
+import AppBanner from "../appBanner/AppBanner"
 
 const SinglePage = ({ Component, dataType }) => {
-   const { id } = useParams();
-   const [data, setData] = useState(null);
-   const { getComic, getCharacter, clearError, process, setProcess } = useMarvelService();
+   const { id } = useParams()
+   const [data, setData] = useState(null)
+   const { getComic, getCharacter, clearError, process, setProcess } = useMarvelService()
 
    useEffect(() => {
       updateData()
+      // eslint-disable-next-line
    }, [id])
 
    const updateData = () => {
-      clearError();
+      clearError()
 
       switch (dataType) {
          case 'comic':
             getComic(id)
                .then(onDataLoaded)
                .then(() => setProcess('confirmed'))
-            break;
+            break
          case 'character':
             getCharacter(id)
                .then(onDataLoaded)
                .then(() => setProcess('confirmed'))
-
+            break
+         default:
+            getComic(id)
+               .then(onDataLoaded)
+               .then(() => setProcess('confirmed'))
+            break
       }
    }
 
    const onDataLoaded = (data) => {
-      setData(data);
+      setData(data)
    }
 
    return (
@@ -42,4 +48,4 @@ const SinglePage = ({ Component, dataType }) => {
    )
 }
 
-export default SinglePage;
+export default SinglePage

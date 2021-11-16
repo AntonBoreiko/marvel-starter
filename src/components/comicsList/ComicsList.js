@@ -1,29 +1,23 @@
 
-
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Spinner from '../spinner/Spinner'
 import ErrorMessage from '../errorMessage/ErrorMessage'
 import useMarvelService from '../../services/MarvelService'
 
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-
 import './comicsList.scss'
 
 const setContent = (process, Component, newItemLoading) => {
     switch (process) {
         case 'waiting':
             return <Spinner />
-            break;
         case 'loading':
             return newItemLoading ? <Component /> : <Spinner />
-            break;
         case 'confirmed':
             return <Component />
-            break;
         case 'error':
             return <ErrorMessage />
-            break;
         default:
             throw new Error('Unexpected process state')
     }
@@ -35,10 +29,11 @@ const ComicsList = () => {
     const [offset, setOffset] = useState(0)
     const [comicsEnded, setComicsEnded] = useState(false)
 
-    const { loading, error, getAllComics, process, setProcess } = useMarvelService()
+    const { getAllComics, process, setProcess } = useMarvelService()
 
     useEffect(() => {
         onRequest(offset, true)
+        // eslint-disable-next-line
     }, [])
 
     const onRequest = (offset, initial) => {
@@ -54,13 +49,11 @@ const ComicsList = () => {
         if (newComicsList.length < 8) {
             ended = true
         }
-
         setComicsList(comicsList => [...comicsList, ...newComicsList])
         setNewItemLoading(false)
         setOffset(offset + 8)
         setComicsEnded(ended)
     }
-
 
     function renderItems(arr) {
         const items = arr.map((item, i) => {
@@ -83,7 +76,6 @@ const ComicsList = () => {
                 <TransitionGroup component={null}>
                     {items}
                 </TransitionGroup>
-
             </ul>
         )
     }
@@ -101,6 +93,5 @@ const ComicsList = () => {
         </div>
     )
 }
-
 
 export default ComicsList

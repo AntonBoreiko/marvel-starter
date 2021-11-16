@@ -3,8 +3,6 @@ import useMarvelService from '../../services/MarvelService'
 import PropTypes from 'prop-types'
 import setContent from '../../utils/setContent'
 
-
-
 import './charInfo.scss'
 
 const CharInfo = (props) => {
@@ -13,8 +11,8 @@ const CharInfo = (props) => {
 
     useEffect(() => {
         updateChar()
+        // eslint-disable-next-line
     }, [props.charId])
-
 
     const updateChar = () => {
         const { charId } = props
@@ -26,7 +24,6 @@ const CharInfo = (props) => {
             .then(onCharLoaded)
             .then(() => setProcess('confirmed'))
     }
-
     const onCharLoaded = (char) => {
         setChar(char)
     }
@@ -41,7 +38,7 @@ const CharInfo = (props) => {
 const View = ({ data }) => {
     const { name, description, thumbnail, home, wiki, comics } = data
     let noComics = 'Comics:'
-    if (comics == 0) {
+    if (comics === 0) {
         noComics = 'Comics: There is no comics'
     }
 
@@ -72,15 +69,16 @@ const View = ({ data }) => {
             <ul className="char__comics-list">
                 {
                     comics.map((item, i) => {
+                        // eslint-disable-next-line
                         if (i > 9) return
                         return (
                             <li key={i} className="char__comics-item">
                                 {item.name}
                             </li>
                         )
+
                     })
                 }
-
             </ul>
         </>
     )
