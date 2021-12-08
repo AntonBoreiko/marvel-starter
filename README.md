@@ -7,4 +7,4 @@
 4. `npm start`
 
 ## Работа с сервером. Использование Hooks, Helmet, Lazy,  React-transition, React-router, Custom hook, formik и многое другое.
-## marvel-starter + HEROKU https://app-emloyees.herokuapp.com
+## marvel-starter + HEROKU https://marvel-starter.herokuapp.com
