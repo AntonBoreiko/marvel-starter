@@ -1,5 +1,5 @@
 
-# marvel-starter - проект на React с использование Create React App и взаимодействием с Marvel API https://developer.marvel.com/docs
+# marvel-starter 🦸‍♂️ - проект на React с использование Create React App и взаимодействием с Marvel API https://developer.marvel.com/docs
 
 1. `git clone https://github.com/AntonBoreiko/marvel-starter.git`
 2. `cd ./marvel-starter`
